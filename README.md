@@ -8,6 +8,8 @@ Discord minimal af music bot
 * `ytdl-core`
 * `yt-search`
 
+Install with `npm i discord.js @discordjs/opus ffmpeg-static ytdl-core yt-search`
+
 # Available commands
  * `!p or !play [url]` - play audio from link.
  * `!pid or !playid [id]` - play audio from video id.

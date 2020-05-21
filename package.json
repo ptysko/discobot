@@ -1,10 +1,10 @@
 {
-  "name": "disco_bot_2",
-  "version": "0.0.0",
-  "description": "disco_bot_2",
+  "name": "discobot",
+  "version": "1.0.0",
+  "description": "discobot",
   "main": "server.js",
   "author": {
-    "name": ""
+    "name": "Patryk Olczak"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",

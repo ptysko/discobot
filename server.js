@@ -4,7 +4,7 @@ const yts = require('yt-search');
 const client = new Discord.Client();
 
 const PREFIX = '!';
-client.login('NzEyNjg1NjI3MDMxNjgzMTAy.XsZexA.kA33a_X2kAqF55M2UWXd5DR7zt0');
+client.login('token');
 
 client.on('ready', () => {
     console.log(`Zalogowano jako ${client.user.tag}`);

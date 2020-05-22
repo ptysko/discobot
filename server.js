@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const yts = require('yt-search');
+const cheerio = require('cheerio');
+const request = require('request');
 const client = new Discord.Client();
 
 const PREFIX = '!';
@@ -114,8 +116,21 @@ client.on('message', async message => {
                 console.log("Uzytkownik nie byl w kanale glosowym.");
             }
             break;
+        case "k":
+        case "kulo_zgadulo_czy":
+            request({
+                method: 'GET',
+                url: 'http://pro.nets.pl/ramka.php?ciach=ciach&ilosc=13&odp1=Tak&odp2=Nie&odp3=Nie%20wiem&odp4=Raczej%20nie&odp5=Pewnie,%20%C5%BCe%20tak&odp6=Przemy%C5%9Bl%20to%20jeszcze&odp7=Zr%C3%B3b%20to!&odp8=Zapomnij%20o%20tym&odp9=Uda%20Ci%20si%C4%99&odp10=Nie%20r%C3%B3b%20tego&odp11=Zaryzykuj!%20Raz%20sie%20%C5%BCyje&odp12=Id%C5%BA%20na%20ca%C5%82o%C5%9B%C4%87!&odp13=Zapytaj%20ponownie%20p%C3%B3%C5%BAniej'
+            }, (err, res, body) => {
+                    if (err) return console.error(err);
+                    let $ = cheerio.load(body);
+                    let title = $('font');
+                    message.reply(` ${title.text().replace(/(\r\n|\n|\r)/gm, "").substring(4).toLowerCase()}`);
+                    console.log(`Kula zgadula odpowiedziala ${title.text().replace(/(\r\n|\n|\r)/gm, "").substring(4).toLowerCase()}`);
+            });
+            break;
         default:
-            message.reply(`komenda ${command[0]} nie istenieje. Dostepne komendy:\n     1. !p lub !play [link] - odtwarza piosenke z linku.\n     2. !pid lub !playid [id] - odtwarza piosenke z youtube po id.\n     3. !s lub !stop - zatrzymuje odtwarzanie piosenki.\n     4. !e lub !search [slowa kluczowe] - wyszukuje piosenke z youtube po tytule.\n     5. !l lub !list [slowa kluczowe] - wyszukuje piosenke z youtube po tytule i wyswietla jej pelny tytul oraz id.`);
+            message.reply(`komenda ${command[0]} nie istenieje. Dostepne komendy:\n\t1. !p lub !play [link] - odtwarza piosenke z linku.\n\t2. !pid lub !playid [id] - odtwarza piosenke z youtube po id.\n\t3. !s lub !stop - zatrzymuje odtwarzanie piosenki.\n\t4. !e lub !search [slowa kluczowe] - wyszukuje piosenke z youtube po tytule.\n\t5. !l lub !list [slowa kluczowe] - wyszukuje piosenke z youtube po tytule i wyswietla jej pelny tytul oraz id.\n\t6. !k lub !kulo_zgadulo_czy [dowolny teskt] - niech zadecyduje los!`);
             console.log("Bledna komenda.");
             break;
     }

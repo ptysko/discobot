@@ -1,5 +1,5 @@
-# discobot
-Discord minimal af music bot
+# Discobot
+Discord minimal af music bot.
 
 # Dependencies
 * `discord.js`
@@ -12,7 +12,7 @@ Discord minimal af music bot
 
 Install with `npm i discord.js @discordjs/opus ffmpeg-static ytdl-core yt-search cheerio request`
 
-# Available commands
+# Commands
  * `!p or !play [url]` - play audio from link.
  * `!pid or !playid [id]` - play audio from video id.
  * `!s or !stop` - stop audio.

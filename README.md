@@ -10,7 +10,7 @@ Discord minimal af music bot
 * `cheerio`
 * `request`
 
-Install with `npm i discord.js @discordjs/opus ffmpeg-static ytdl-core yt-search`
+Install with `npm i discord.js @discordjs/opus ffmpeg-static ytdl-core yt-search cheerio request`
 
 # Available commands
  * `!p or !play [url]` - play audio from link.

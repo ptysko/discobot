@@ -2,6 +2,7 @@
 Discord minimal af music bot.
 
 # Dependencies
+Discobot is written to work on latest nodejs 14.
 * `discord.js`
 * `@discordjs/opus`
 * `ffmpeg-static`

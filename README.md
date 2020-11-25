@@ -8,10 +8,8 @@ Discobot is written to work on latest nodejs 14.
 * `ffmpeg-static`
 * `ytdl-core`
 * `yt-search`
-* `cheerio`
-* `request`
 
-Install with `npm i discord.js @discordjs/opus ffmpeg-static ytdl-core yt-search cheerio request`
+Install with `npm i discord.js @discordjs/opus ffmpeg-static ytdl-core yt-search`
 
 # Commands
  * `!p or !play [url]` - play audio from link.
